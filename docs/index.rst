@@ -1,11 +1,11 @@
 .. ##########################
-.. easy-as-pypi Documentation
+.. easy-as-pypi-termio Documentation
 .. ##########################
 
-.. .. |easy-as-pypi| replace:: ``easy-as-pypi``
-.. .. _easy-as-pypi: https://github.com/landonb/easy-as-pypi
+.. .. |easy-as-pypi-termio| replace:: ``easy-as-pypi-termio``
+.. .. _easy-as-pypi-termio: https://github.com/tallybark/easy-as-pypi-termio
 
-.. Documentation for |easy-as-pypi|_.
+.. Documentation for |easy-as-pypi-termio|_.
 
 .. .. toctree::
 ..    :maxdepth: 4
