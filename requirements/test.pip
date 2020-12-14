@@ -59,3 +59,10 @@ codecov >= 2.0.15
 #   https://github.com/omaciel/fauxfactory
 #fauxfactory >= 3.0.6
 
+# *** Developers might enjoy.
+
+# Pyfiglet FIGlet port, for making large letters out of ordinary text.
+#  https://github.com/pwaller/pyfiglet
+# Good work, Frank, Ian, and Glenn! Great LETters!
+pyfiglet
+

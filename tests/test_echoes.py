@@ -22,16 +22,32 @@
 # TORT OR OTHERWISE,  ARISING FROM,  OUT OF  OR IN  CONNECTION WITH THE
 # SOFTWARE   OR   THE   USE   OR   OTHER   DEALINGS  IN   THE  SOFTWARE.
 
-"""Provides CLI runner() test fixture, for interacting with Click app."""
-
 import pytest
+from unittest import mock
 
-from easy_as_pypi_termio.style import set_coloring
+import click_hotoffthehamster as click
+
+from easy_as_pypi_termio.echoes import (
+    echo_block_header,
+    highlight_value,
+)
 
 
-@pytest.fixture
-def enable_coloring():
-    set_coloring(True)
-    yield
-    set_coloring(False)
+@mock.patch.object(click, 'echo')
+def test_echo_block_header_basic(click_echo_mock):
+    echo_block_header('foo')
+    assert click_echo_mock.called
+
+
+@pytest.mark.parametrize(('full_width',), ((True,), (False,)))
+def test_echo_block_header_full_width(full_width, mocker):
+    # @parametrize and @patch don't mix, apparently.
+    click_echo_mock = mocker.patch.object(click, 'echo')
+    echo_block_header('foo', full_width=full_width)
+    assert click_echo_mock.called
+
+
+def test_highlight_value(enable_coloring):
+    highlight_color = highlight_value('foo')
+    assert highlight_color == '\x1b[38;5;49mfoo\x1b[0m'
 

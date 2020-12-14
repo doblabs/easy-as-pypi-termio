@@ -19,11 +19,40 @@ from setuptools import find_packages, setup
 # *** Package requirements.
 
 requirements = [
-    # YOU: Add your project-specific requirements here.
+    # Enable Click color support (we don't use colorama directly, but it does),
+    #  "on Windows, this ... is only available if colorama is installed".
+    #  https://click.palletsprojects.com/en/5.x/utils/#ansi-colors
+    #  https://pypi.org/project/colorama/
+    'colorama >= 0.4.3, < 1',
+
+    # *** For ascii_table.py
+    #
+    # https://github.com/mnmelo/lazy_import
+    'lazy_import >= 0.2.2, < 1',
+    # Tabulate is one of the many table formatter choices.
+    #  https://bitbucket.org/astanin/python-tabulate
+    'tabulate >= 0.8.7, < 1',
+    # Texttable is one of the many table formatter choices.
+    #  https://github.com/bufordtaylor/python-texttable
+    'texttable >= 1.6.2, < 2',
+
+    # *** HOTH packages.
+
+    # "Very simple Python library for color and formatting in terminal."
+    # Forked (for italic "support") to:
+    #  https://github.com/hotoffthehamster/ansi-escape-room
+    # Forked from:
+    #  https://gitlab.com/dslackw/colored
+    # See wrapper file:
+    #  easy_as_pypi_termio/termio/style.py
+    'ansi-escape-room == 1.4.2',
 
     # (lb): Click for life.
     #  https://github.com/pallets/click
-    'click >= 7.0, < 8',
+    #   'click >= 7.0, < 8',
+    # But instead a Click fork with subtle tweaks.
+    #  https://github.com/hotoffthehamster/click
+    'click-hotoffthehamster >= 7.1.1, <= 7.1.2',
 ]
 
 # *** Minimal setup() function -- Prefer using config where possible.

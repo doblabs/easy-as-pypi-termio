@@ -24,38 +24,37 @@
 
 """Top-level package for this CLI-based application."""
 
-import os
-import sys
+# Convenience imports.
+#
+# - Usage: Lets you simplify imports, e.g., these as equivalent:
+#
+#     from easy_as_pypi_termio.echoes import click_echo
+#
+#     from easy_as_pypi_termio import click_echo
+#
+# - Note: Disable the imported-but-not-used linter rule:
+#
+#     noqa: F401: Disable: 'foo.bar' imported but unused.
 
-import click
-
-from easy_as_pypi_termio import commands
-
-__all__ = (
-    '__arg0name__',
-    '__author_name__',
-    '__author_link__',
-    '__package_name__',
+from .echoes import (  # noqa: F401
+    echo_block_header,
+    highlight_value
 )
-
-# NOT_DRY: (lb): These strings also found in setup.cfg, but I'm not sure how best
-# to DRY. Fortunately, they're not likely to change. Useful for UX copyright text.
-__author_name__ = 'Landon Bouma'
-__author_link__ = 'https://tallybark.com'
-
-# (lb): Not sure if the package name is available at runtime. Seems kinda meta,
-# like, Who am I? Useful for calling get_distribution, or to avoid hardcoding
-# the package name in text generated for the UX.
-__package_name__ = 'easy-as-pypi-termio'
-__arg0name__ = os.path.basename(sys.argv[0])
-
-
-@click.group()
-def cli():
-    pass
-
-
-# Add commands
-# YOU: Change as appropriate.
-cli.add_command(commands.easy_as_pypi_termio.eat)
+from .errors import (  # noqa: F401
+    echo_exit,
+    echo_warning,
+    exit_warning,
+    exit_warning_crude
+)
+from .paging import (  # noqa: F401
+    ClickEchoPager,
+    click_echo
+)
+from .style import (  # noqa: F401
+    attr,
+    bg,
+    coloring,
+    stylize,
+    fg
+)
 
