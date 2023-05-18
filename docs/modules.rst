@@ -1,5 +1,5 @@
-easy_as_pypi_termio
-===================
+src
+===
 
 .. toctree::
    :maxdepth: 4
