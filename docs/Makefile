@@ -1,10 +1,15 @@
-# This file exists within 'easy-as-pypi-termio':
-#
-#   https://github.com/tallybark/easy-as-pypi-termio#🍉
+# Author: Landon Bouma <https://tallybark.com/>
+# Project: https://github.com/pydob/ <varies>
+# Pattern: https://github.com/pydob/easy-as-pypi#🥧
+# License: MIT
 
 # Makefile for Sphinx documentation
 
-PROJNAME = easy-as-pypi-termio
+# Suss the project name from the parent directory name. Assumes this
+# file is under a docs/ directory in the project directory, and that
+# the project directory *is* named like the project, e.g., this file
+# might be: /path/to/my-project/docs/Makefile
+PROJNAME ?= $(shell basename "$$(dirname "$$(pwd)")")
 
 # You can set these variables from the command line.
 SPHINXOPTS    =

@@ -1,14 +1,15 @@
-# This file exists within 'easy-as-pypi-termio':
-#
-#   https://github.com/tallybark/easy-as-pypi-termio#🍉
+# Author: Landon Bouma <https://tallybark.com/>
+# Project: https://github.com/pydob/ <varies>
+# Pattern: https://github.com/pydob/easy-as-pypi#🥧
+# License: MIT
 
-# USAGE: Install an http://editorconfig.org plugin; profit.
+# USAGE: Step 1: Install an http://editorconfig.org plugin.
 #
-#        Consider, for example:
-#
-#        - EditorConfig Vim Plugin
+#        - Consider EditorConfig Vim plugin, for example:
 #
 #          https://github.com/editorconfig/editorconfig-vim
+#
+#        Step 3: Profit.
 
 root = true
 

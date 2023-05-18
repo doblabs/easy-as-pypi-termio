@@ -1,8 +1,9 @@
 #!/usr/bin/env python
-
 # This file exists within 'easy-as-pypi-termio':
-#
-#   https://github.com/tallybark/easy-as-pypi-termio#🍉
+# Author: Landon Bouma <https://tallybark.com/>
+# Project: https://github.com/pydob/ <varies>
+# Pattern: https://github.com/pydob/easy-as-pypi#🥧
+# License: MIT
 
 # Boilerplate documentation build configuration file,
 # (Originally) created by sphinx-quickstart on Tue Jul 9 22:26:36 2013
@@ -44,22 +45,62 @@ sys.path.insert(0, project_root)
 # ┃                                                                     ┃
 # ┃ YOU/DEV: Customize this import and these strings for your project.  ┃
 
-project_dist = 'easy-as-pypi-termio'
-package_name = 'easy_as_pypi_termio'
-project_ghuser = 'tallybark'
-project_ghrepo = project_dist
-project_texinfo = 'One line description of project.'
-project_docinfo = '{} Documentation'.format(project_dist)
-project_htmlhelp_basename = 'EasyAsPypiTermiodoc'
-project_copy = 'Landon Bouma.'
+project_ghuser = 'pydob'
+# See project_ghrepo, below.
+
 project_auth = 'Landon Bouma'
+project_copy = 'Landon Bouma.'
 project_orgn = 'Tally Bark LLC'
+
+# ***
+
+# Usually the distributable name is the same name as the directory.
+# - If that's not the case for you, change this, e.g.,
+#
+#     project_dist = 'pip-install-name'
+project_dist = os.path.basename(project_root)
+
+# Usually the installable package name is the same name as the
+# kebab-case directory name converted to snake_case.
+# - If that's not the case for you, change this, e.g.,
+#
+#     package_name = 'python_import_name'
+package_name = project_dist.replace('-', '_')
+
+project_ghrepo = project_dist
 
 exclude_patterns = [
     'CODE-OF-CONDUCT.rst',
     'CONTRIBUTING.rst',
     'README.rst',
 ]
+
+# ***
+
+# You can ignore these values unless you plan to generate other formats.
+
+# Used below by latex_documents, man_pages, and texinfo_documents,
+# none of which we generate from Sphinx sources.
+project_docinfo = '{} Documentation'.format(project_dist)
+
+# Option for HTMLHelp output, used by htmlhelp_basename below.
+# - This value seems like it'd be used for HTML output:
+#   - *Output file base name for HTML help builder. Default is 'pydoc'.*
+#     https://certik.github.io/sphinx/config.html
+#   But I don't see it used in the HTML docs under docs/_build, either
+#   as data, or as a "file base name". So, to me, looks unused.
+#   - See also: https://pypi.org/project/sphinxcontrib-htmlhelp/
+# - This value is usually (or at least what I've seen in examples)
+#   the PascalCase of the project (or package) name with "doc"
+#   appended, e.g., for a project named "my-python-project", then:
+#
+#     project_htmlhelp_basename = 'MyPythonProjectdoc'
+project_htmlhelp_basename = ''.join(
+    [word.capitalize() for word in project_dist.split('-')]
+) + 'doc'
+
+# Used by texinfo_documents, below, for Texinfo output.
+project_texinfo = 'One line description of project.'
 
 # ┃                                                                     ┃
 # ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
@@ -224,7 +265,7 @@ html_context = {
 
 # File-wide metadata.
 # (lb): I found this documented somewhere but it did not fix "Edit on GitHub" broken link.
-#   github_url = 'https://github.com/tallybark/easy-as-pypi-termio'
+#   github_url = 'https://github.com/pydob/easy-as-pypi'
 
 # Add any paths that contain custom themes here, relative to this directory.
 #html_theme_path = []
@@ -252,7 +293,7 @@ html_context = {
 # 16x16 or 32x32 pixels large.
 #html_favicon = None
 # (lb): Set your project logo thusly:
-#  html_favicon = 'assets/easy-as-pypi-termio_logo.png'
+#  html_favicon = 'assets/easy-as-pypi_logo.png'
 
 # Add any paths that contain custom static files (such as style sheets)
 # here, relative to this directory. They are copied after the builtin
@@ -408,4 +449,21 @@ texinfo_documents = [(
 
 # If true, do not generate a @detailmenu in the "Top" node's menu.
 #texinfo_no_detailmenu = False
+
+# -- Custom options for easy-as-pypi and related projects --------------
+
+# If `lintcheck` complains about your anchor links, add them below.
+#
+# - CXREF: Default is: linkcheck_anchors_ignore = ["^!"]
+#     https://www.sphinx-doc.org/en/master/usage/configuration.html
+# - CXREF: `lintcheck` source:
+#     https://www.sphinx-doc.org/en/master/_modules/sphinx/builders/linkcheck.html
+linkcheck_anchors_ignore = [
+    # Default ignore entry is leading bang.
+    "^!",
+    # `linkcheck` complains about these perfectly-working anchor links.
+    # - E.g.,
+    #   `<https://easy_as_pypi.readthedocs.io/en/latest/contributing.html#get-started>`__
+    "get-started",
+]
 
