@@ -23,6 +23,7 @@
 # SOFTWARE   OR   THE   USE   OR   OTHER   DEALINGS  IN   THE  SOFTWARE.
 
 import os  # noqa: F401
+import shutil
 import sys  # noqa: F401
 
 import pytest
@@ -32,8 +33,6 @@ try:
     import pyfiglet
 except ImportError:
     pyfiglet = None
-
-import click_hotoffthehamster as click
 
 from easy_as_pypi_termio.ascii_art import (
     append_figlet_text_maybe,
@@ -83,9 +82,9 @@ def test_randomster():
 
 
 # (lb): Not sure why, but mock.patch does not work how I'd expect:
-#         @mock.patch('click.get_terminal_size', return_value=(0,))
+#         @mock.patch('shutil.get_terminal_size', return_value=(0,))
 #       but a patch.object does.
-@mock.patch.object(click, 'get_terminal_size', return_value=(0,))
+@mock.patch.object(shutil, 'get_terminal_size', return_value=mock.Mock(columns=0))
 def test_avail_width_none(get_terminal_size):
     art = randomster()
     assert art

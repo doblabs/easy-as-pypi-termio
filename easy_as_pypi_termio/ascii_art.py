@@ -24,10 +24,9 @@
 
 import os
 import random
+import shutil
 
 from gettext import gettext as _
-
-import click_hotoffthehamster as click
 
 from .style import attr, bg, fg
 
@@ -819,7 +818,7 @@ def lifeless():
 
 
 def center_lines(lines):
-    term_width = click.get_terminal_size()[0]
+    term_width = shutil.get_terminal_size().columns
     line_width = max([len(line) for line in lines.splitlines()])
     avail_width = term_width - line_width
     return justify_line(lines, avail_width)

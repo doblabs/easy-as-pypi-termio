@@ -24,7 +24,7 @@
 
 """Methods for common terminal echo operations."""
 
-import click_hotoffthehamster as click
+import shutil
 
 from .paging import click_echo
 from .style import attr, fg
@@ -69,7 +69,7 @@ def __format_block_header(title, sep='━', full_width=False):
             horiz_rule = sep * len(title)
         else:
             # NOTE: When piping (i.e., no tty), width defaults to 80.
-            term_width = click.get_terminal_size()[0]
+            term_width = shutil.get_terminal_size().columns
             horiz_rule = '─' * term_width
         return horiz_rule
 

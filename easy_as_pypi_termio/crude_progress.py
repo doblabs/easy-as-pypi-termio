@@ -24,7 +24,7 @@
 
 """Hamter CLI Nonbusiness Helper modules."""
 
-import click_hotoffthehamster as click
+import shutil
 
 from .paging import click_echo
 
@@ -48,7 +48,7 @@ class CrudeProgress(object):
             return
 
         def _click_echo_current_task():
-            term_width = click.get_terminal_size()[0]
+            term_width = shutil.get_terminal_size().columns
             cursor_to_leftmost_column()
             if not no_clear:
                 click_echo(' ' * term_width, nl=False)  # "Clear" cursor line.
@@ -76,7 +76,7 @@ class CrudeProgress(object):
             return
 
         self.click_echo_current_task(task_descrip)
-        term_width = click.get_terminal_size()[0] - len(task_descrip) - 1
+        term_width = shutil.get_terminal_size().columns - len(task_descrip) - 1
         dot_count = 0
         fact_sep = '.'
         return term_width, dot_count, fact_sep
