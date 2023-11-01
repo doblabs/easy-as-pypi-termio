@@ -1,6 +1,6 @@
 # Author: Landon Bouma <https://tallybark.com/>
-# Project: https://github.com/pydob/ <varies>
-# Pattern: https://github.com/pydob/easy-as-pypi#🥧
+# Project: https://github.com/doblabs/ <varies>
+# Pattern: https://github.com/doblabs/easy-as-pypi#🥧
 # License: MIT
 
 # Packaging — `make build`.
@@ -8,7 +8,6 @@
 
 # Testing/CI tasks.
 /.pytest_cache/
-# FIXME/2023-05-17 16:50: Verify that tox still creates /.tox or /.tox/
 /.tox/
 
 # Coverage — `make coverage`.
@@ -33,23 +32,22 @@
 # to, say, tweak the TOC. For an example, see:
 #   docs/easy-as-pypi.rst
 
-# Test output for Vim quickfix — `make test-local`.
-/.make.out
-
-# Translations files.
-*.mo
-
-# Byte code.
+# Bytecode.
 *.py[cod]
 __pycache__/
 
 # Editable pyproject.toml and .venv-<project> — `make develop`.
-/.editable/
-/.venv*/
+/.pyproject-editable/
+.venv*/
+
+# DX artifacts.
+# - USYNC: Matches VIM_QUICKFIX_FLAKE8 from `make flake8`.
+#   - If you use a different path, add yours to .git/info/exclude
+/.vimquickfix.flake8
+# - USYNC: Matches VIM_QUICKFIX_PYTEST from `make test-local`.
+#   - If you use a different path, add yours to .git/info/exclude
+/.vimquickfix.pytest
 
 # User's personal .ignore (see .ignore.example).
 /.ignore
-
-# Optional private DEV Makefile.
-/Makefile.local
 
