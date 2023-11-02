@@ -4,7 +4,7 @@ REM vim:tw=0:ts=4:sw=4:noet:norl:nospell:ft=dosbatch:ff=dos
 
 REM This file exists within 'easy-as-pypi-termio':
 REM
-REM   https://github.com/hotoffthehamster/easy-as-pypi-termio
+REM   https://github.com/doblabs/easy-as-pypi-termio
 
 set PROJECTNAME=easy-as-pypi-termio
 
