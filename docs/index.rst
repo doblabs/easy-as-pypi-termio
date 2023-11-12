@@ -5,7 +5,7 @@
 .. vim:tw=0:ts=3:sw=3:et:norl:nospell:ft=rst
 
 .. .. |easy-as-pypi-termio| replace:: ``easy-as-pypi-termio``
-.. .. _easy-as-pypi-termio: https://github.com/doblabs/easy-as-pypi-termio
+.. .. _easy-as-pypi-termio: https://github.com/doblabs/easy-as-pypi-termio#🍉
 
 .. Documentation for |easy-as-pypi-termio|_.
 
