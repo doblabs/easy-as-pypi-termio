@@ -58,3 +58,6 @@ from .style import (  # noqa: F401
     fg
 )
 
+# This version is substituted on poetry-build by poetry-dynamic-versioning.
+# - Consequently, __version__ remains empty when installed in 'editable' mode.
+__version__ = ""
