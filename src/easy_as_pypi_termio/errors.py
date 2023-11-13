@@ -30,7 +30,6 @@ import click_hotoffthehamster as click
 
 # MAYBE/2020-12-14 03:25: Remove/replace these hamster-specific alert graphics...
 from .ascii_art import infection_notice, lifeless
-
 from .paging import click_echo, flush_pager
 from .style import stylize
 

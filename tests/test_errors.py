@@ -22,10 +22,10 @@
 # TORT OR OTHERWISE,  ARISING FROM,  OUT OF  OR IN  CONNECTION WITH THE
 # SOFTWARE   OR   THE   USE   OR   OTHER   DEALINGS  IN   THE  SOFTWARE.
 
-import pytest
 from unittest import mock
 
 import click_hotoffthehamster as click
+import pytest
 
 from easy_as_pypi_termio.errors import (
     echo_exit,

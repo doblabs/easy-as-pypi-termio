@@ -25,26 +25,24 @@
 import os  # noqa: F401
 import shutil
 import sys  # noqa: F401
+from unittest import mock
 
 import pytest
-from unittest import mock
 
 try:
     import pyfiglet
 except ImportError:
     pyfiglet = None
 
-from easy_as_pypi_termio.ascii_art import (
+from easy_as_pypi_termio.ascii_art import (  # ...
     append_figlet_text_maybe,
+    curly_quote,
+    curly_quotes,
     fetch_asciis,
     infection_notice,
     lifeless,
     randomster,
-    # ...
-    curly_quote,
-    curly_quotes,
 )
-
 
 if pyfiglet is not None:
 

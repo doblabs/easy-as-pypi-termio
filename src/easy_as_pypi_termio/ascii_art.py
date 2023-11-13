@@ -25,7 +25,6 @@
 import os
 import random
 import shutil
-
 from gettext import gettext as _
 
 from .style import attr, bg, fg

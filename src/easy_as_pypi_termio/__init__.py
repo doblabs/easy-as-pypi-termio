@@ -44,7 +44,7 @@ from .errors import (  # noqa: F401
     exit_warning_crude,
 )
 from .paging import ClickEchoPager, click_echo  # noqa: F401
-from .style import attr, bg, coloring, stylize, fg  # noqa: F401
+from .style import attr, bg, coloring, fg, stylize  # noqa: F401
 
 # This version is substituted on poetry-build by poetry-dynamic-versioning.
 # - Consequently, __version__ remains empty when installed in 'editable' mode.

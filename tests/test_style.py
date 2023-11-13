@@ -22,17 +22,17 @@
 # TORT OR OTHERWISE,  ARISING FROM,  OUT OF  OR IN  CONNECTION WITH THE
 # SOFTWARE   OR   THE   USE   OR   OTHER   DEALINGS  IN   THE  SOFTWARE.
 
+from easy_as_pypi_termio.style import map_color  # Unimplemented
 from easy_as_pypi_termio.style import (
+    attr,
+    bg,
+    coloring,
     disable_colors,
     enable_colors,
-    coloring,
-    set_coloring,
     fg,
-    bg,
-    attr,
+    set_coloring,
     stylize,
     verify_colors_attrs,
-    map_color,  # Unimplemented
 )
 
 
