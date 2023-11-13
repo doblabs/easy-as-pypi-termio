@@ -35,7 +35,6 @@ from easy_as_pypi_termio.paging import (
 
 
 class TestClickEchoPager:
-
     def test_enable_paging(self):
         assert not ClickEchoPager.paging()
         ClickEchoPager.enable_paging()
@@ -49,16 +48,18 @@ class TestClickEchoPager:
         was_paging = ClickEchoPager.set_paging(False)
         assert was_paging
 
-    @mock.patch.object(click, 'echo')
+    @mock.patch.object(click, "echo")
     def test_write_paging_off(self, click_echo_mock, enable_coloring):
-        ClickEchoPager.write('foo')
+        ClickEchoPager.write("foo")
         assert click_echo_mock.called
 
-    @mock.patch.object(click, 'echo_via_pager')
+    @mock.patch.object(click, "echo_via_pager")
     def test_write_paging_on_then_flush_pager(
-        self, click_echo_via_pager_mock, enable_paging,
+        self,
+        click_echo_via_pager_mock,
+        enable_paging,
     ):
-        ClickEchoPager.write('foo')
+        ClickEchoPager.write("foo")
         assert not click_echo_via_pager_mock.called
         ClickEchoPager.flush_pager()
         assert click_echo_via_pager_mock.called
@@ -68,12 +69,12 @@ class TestClickEchoPager:
 
 # ***
 
-@mock.patch.object(click, 'echo')
-def test_click_echo_and_flush_pager_decorator(click_echo_mock):
 
+@mock.patch.object(click, "echo")
+def test_click_echo_and_flush_pager_decorator(click_echo_mock):
     @flush_pager
     def inner_test():
-        click_echo('foo')
+        click_echo("foo")
 
     inner_test()
     assert click_echo_mock.called
@@ -81,9 +82,9 @@ def test_click_echo_and_flush_pager_decorator(click_echo_mock):
 
 # ***
 
+
 @pytest.fixture
 def enable_paging():
     ClickEchoPager.set_paging(True)
     yield
     ClickEchoPager.set_paging(False)
-

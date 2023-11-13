@@ -34,15 +34,15 @@ __all__ = (
     # 'append_figlet_text_maybe',
     # 'center_lines',
     # 'dead_hamsters_society',
-    'fetch_asciis',
-    'hamster_artwork',
-    'infection_notice',
+    "fetch_asciis",
+    "hamster_artwork",
+    "infection_notice",
     # 'justify_line',
-    'lifeless',
-    'randomster',
+    "lifeless",
+    "randomster",
     # Not sure why in here:
-    'curly_quote',
-    'curly_quotes',
+    "curly_quote",
+    "curly_quotes",
     # PRIVATE:
     #  '_hamster_artwork_{}',
 )
@@ -103,16 +103,14 @@ def append_figlet_text_maybe(artwork):
         try:
             from pyfiglet import Figlet
         except ImportError:
-            return ''
+            return ""
         else:
             return figletize_hamster(Figlet())
 
     def figletize_hamster(figlet):
         figlet.setFont(font=random.choice(figlet.getFonts()))
-        hword = ''.join(
-            random.choice(
-                (str.upper, str.lower)
-            )(lttr) for lttr in 'hamster'
+        hword = "".join(
+            random.choice((str.upper, str.lower))(lttr) for lttr in "hamster"
         )
         rendered = figlet.renderText(hword)
         return "\n" + rendered + "\n"
@@ -126,8 +124,7 @@ def infection_notice():
 
 # ***
 
-_hamster_artwork_01 = (
-    '''
+_hamster_artwork_01 = """
             (>\\---/<)
             ,'     `.
            /  q   p  \\
@@ -141,11 +138,10 @@ _hamster_artwork_01 = (
         `._ _/_  ___.'-\\\\\\
            `--\\\\\\
 
-''')
+"""
 # http://ascii.co.uk/art/hamster
 
-_hamster_artwork_02 = (
-    '''
+_hamster_artwork_02 = '''
           _           _
         (`-`;-"```"-;`-`)
          \\.'         './
@@ -161,12 +157,13 @@ _hamster_artwork_02 = (
      '.  '-._       _.-'   .'
  jgs (((-'`  `"""""`   `'-)))
 
-'''.format(bg('yellow'), fg('black'), attr('reset')))
+'''.format(
+    bg("yellow"), fg("black"), attr("reset")
+)
 # http://ascii.co.uk/art/hamster
 
 
-_hamster_artwork_02_colorful = (
-    '''
+_hamster_artwork_02_colorful = '''
 {}          _           _
 {}        (`-`;-"```"-;`-`)
 {}         \\.'         './
@@ -183,12 +180,27 @@ _hamster_artwork_02_colorful = (
 {}     (((-'`  `"""""`   `'-)))
 
 '''.format(
-        fg(90), fg(91), fg(92), fg(93), fg(100), fg(101), fg(102), fg(103),
-        bg('yellow'), fg('black'), attr('reset'),
-        fg(103),
-        fg(104), fg(105), fg(106), fg(107), fg(108), fg(109), fg(110),
-        attr('reset'),
-    ))
+    fg(90),
+    fg(91),
+    fg(92),
+    fg(93),
+    fg(100),
+    fg(101),
+    fg(102),
+    fg(103),
+    bg("yellow"),
+    fg("black"),
+    attr("reset"),
+    fg(103),
+    fg(104),
+    fg(105),
+    fg(106),
+    fg(107),
+    fg(108),
+    fg(109),
+    fg(110),
+    attr("reset"),
+)
 # http://ascii.co.uk/art/hamster
 
 
@@ -200,21 +212,23 @@ _hamster_artwork_03 = (
     #      J    ,"" _      ".
     #   .-",___,)____)___),-'
     #
-    '''
+    """
             o_
          .-"  ".
        ."    _-'-""--o
       J    {}@{}={}" _      ".
    .-",___,)____)___),-'
 
-'''.format(fg('purple_4a'), fg('purple_4a'), attr('reset')))
+""".format(
+        fg("purple_4a"), fg("purple_4a"), attr("reset")
+    )
+)
 # Title: "Hamster Style" - by gla
 # Credit: bmw
 
 # MAYBE/2018-05-16: (lb): (This isn't branding.)
 #   Find other banners using different fonts to make that point clear.
-_hamster_artwork_04 = (
-    '''
+_hamster_artwork_04 = """
 {}888                                  888
 {}888                                  888
 {}888                                  888
@@ -224,13 +238,19 @@ _hamster_artwork_04 = (
 {}888  888888  888888  888  888     X88Y88b. Y8b.    888
 {}888  888"Y888888888  888  888 88888P' "Y888 "Y8888 888
 {}
-'''.format(
-        fg(90), fg(91), fg(92), fg(93), fg(100), fg(101), fg(102), fg(103),
-        attr('reset'),
-    ))
+""".format(
+    fg(90),
+    fg(91),
+    fg(92),
+    fg(93),
+    fg(100),
+    fg(101),
+    fg(102),
+    fg(103),
+    attr("reset"),
+)
 
-_hamster_artwork_05 = (
-    '''
+_hamster_artwork_05 = """
 MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
 MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
 MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
@@ -270,12 +290,11 @@ MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMWMWNXX0xdOWMWWMMMMMMMMMMMMMMM
 MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMWWMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
 MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
 
-''')
+"""
 # https://jelbo.deviantart.com/art/Sitting-Hamsters-48120570
 # https://www.ascii-art-generator.org/
 
-_hamster_artwork_06 = (
-    '''
+_hamster_artwork_06 = """
                                         ..
                                       .;ddl,..;,.             ..
                             ........ 'okxxdxkddxoc.  ....   'clc;.
@@ -310,12 +329,11 @@ _hamster_artwork_06 = (
                                                       ';cc;lx,
                                                        ...;c'
 
-''')
+"""
 # https://jelbo.deviantart.com/art/Sitting-Hamsters-48120570
 # https://www.ascii-art-generator.org/
 
-_hamster_artwork_07 = (
-    """
+_hamster_artwork_07 = """
                         .',,.       . ..
                        ,loooo,    ............
                     ..;olc:;ll...,:'......;,...
@@ -340,12 +358,11 @@ _hamster_artwork_07 = (
               'ldl:,,,'.'''.....   ...
              .;;'.
 
-""")
+"""
 # http://pawlovearts.tumblr.com/post/167978580015/fallout-ham
 # https://www.ascii-art-generator.org/
 
-_hamster_artwork_08 = (
-    '''
+_hamster_artwork_08 = """
            /\\.-="=-./\\
            \\` _':'_ `/
             | o\\ /o |
@@ -358,23 +375,21 @@ _hamster_artwork_08 = (
          /  | |'-'| |  \\
    jgs  (,,/\\ /   \\ /\\,,)
             `"`   `"`
-''')
+"""
 # http:www.oocities.org/spunk1111/pets2.htm
 # http://www.chris.com/ascii/joan/www.geocities.com/SoHo/7373/97oct.html
 
-_hamster_artwork_09 = (
-    '''
+_hamster_artwork_09 = """
                 c._
       ."````"-"C  o'-.
     _/   \\       _..'
    '-\\  _/--.<<-'
       `\\)     \\)  jgs
 
-''')
+"""
 # http:www.oocities.org/spunk1111/pets2.htm
 
-_hamster_artwork_10 = (
-    """
+_hamster_artwork_10 = """
                                          ....''''...
                                    ..,'''';c:'..,:lc,.'..
                                 .,:c;'.....   ....':..'::,'.
@@ -415,12 +430,11 @@ _hamster_artwork_10 = (
                      .:;....
                      ...
 
-""")
+"""
 # https://www.alisoncoughlan.com/blog/finding-meaning-on-the-hamster-wheel
 # https://www.ascii-art-generator.org/
 
-_hamster_artwork_11 = (
-    """
+_hamster_artwork_11 = """
                          ...'''''''''....
                     .'';:lllcc::::::clllc:,'..
                  .,;cl:,,,;;;;,,,,,,;;;,',;cl:,'.
@@ -451,14 +465,13 @@ _hamster_artwork_11 = (
               .c;,,,,,,,',,,,,,,,,,,,,,,,''''',,,,,';,.
                 ...................................
 
-""")
+"""
 # https://www.123rf.com/photo_74430654_stock-vector-cute-cartoon-hamster-running-in-hamster-wheel-vector-pet-illustration-.html
 # https://www.ascii-art-generator.org/
 
 # ***
 
-_hamster_corpse_01 = (
-    """
+_hamster_corpse_01 = """
                                         .
                                   ..:oodxoooolooc,.
                               .,oxddkxoccc:c::lodkkxl'
@@ -494,13 +507,12 @@ _hamster_corpse_01 = (
                            'co::cc'
 
 
-""")
+"""
 # https://www.ascii-art-generator.org/
 
 # (lb): The rest are derivative works of photos I found after searching:
 #   dead hamster, hamster grave, dead guinea pig, hamster corpse.
-_hamster_corpse_02 = (
-    """
+_hamster_corpse_02 = """
        ...,c,..
      .',:oxo:ld,    ...
      ';;oO0d:okl;ccclol:;''..'...
@@ -513,10 +525,9 @@ _hamster_corpse_02 = (
          .',,,,',,,,,,,,'....        ....
             .       ..
 
-""")
+"""
 
-_hamster_corpse_03 = (
-    """
+_hamster_corpse_03 = """
                    ....:d:.
                  .',;;:odc;:l,
                .';;;lk0Oo;:kNd.. ....''..         ..
@@ -532,10 +543,9 @@ _hamster_corpse_03 = (
                     .,;;;;;;;;;;;;;;;;;;;;;;;,,'......     .,'..
                       .',,,,''''',,,,,,,'''..               ...'..
 
-""")
+"""
 
-_hamster_corpse_04 = (
-    """
+_hamster_corpse_04 = """
                            .....
                          ....''...
                      ..'.'..;:,''...................
@@ -556,10 +566,9 @@ _hamster_corpse_04 = (
                                                      ..  ..
 
 
-""")
+"""
 
-_hamster_corpse_05_ORIG = (
-    """
+_hamster_corpse_05_ORIG = """
                           .;;..  ........ .....
                          .:kkdc;''.....    ....',,'.
                         .:looddl:;;,,'.    ..';cloddl'
@@ -579,9 +588,8 @@ _hamster_corpse_05_ORIG = (
                       ..';;:cllloddxkO00OkO0XXKOdl:,'.
                          .....'',;;::cllolllocc:;;'..
 
-""")
-_hamster_corpse_05 = (
-    """
+"""
+_hamster_corpse_05 = """
                            .;;..  ........ .....
                           .:kkdc;''.....    ....',,'.
                          .:looddl:;;,,'.    ..';cloddl'
@@ -602,12 +610,15 @@ _hamster_corpse_05 = (
                           .....'',;;::cllolllocc:;;'..
 
 """.format(
-        bg('grey_30'), fg('red'), attr('reset'),
-        bg('grey_30'), fg('red'), attr('reset'),
-    ))
+    bg("grey_30"),
+    fg("red"),
+    attr("reset"),
+    bg("grey_30"),
+    fg("red"),
+    attr("reset"),
+)
 
-_hamster_corpse_06 = (
-    """
+_hamster_corpse_06 = """
                 ''....... ...
                ;ddl;,''.  ..,::;.
                :xOxlc:'.   .;ldxc.
@@ -621,10 +632,9 @@ _hamster_corpse_06 = (
               .',;:looxxxxxOko:'.
                   .....''''....
 
-""")
+"""
 
-_hamster_corpse_07_ORIG = (
-    """
+_hamster_corpse_07_ORIG = """
             .,c,.',cdc',,;cl:...,.
   ..'.    ';::lc::,:c::;;;ol;:co:...
 .,;;:c,..::,,,::;;;;;;;;,;::,;ll;;ldc.
@@ -649,9 +659,8 @@ ccc;.;cll;;;;;;;;;;;;;;;;;;;clc,.;:clc;;clc,
    .ccc:;;:o:  ............'oo:::lc:'.
      'dxllol.               'clccl,
 
-""")
-_hamster_corpse_07 = (
-    """
+"""
+_hamster_corpse_07 = """
                                 .,c,.',cdc',,;cl:...,.
                       ..'.    ';::lc::,:c::;;;ol;:co:...
                     .,;;:c,..::,,,::;;;;;;;;,;::,;ll;;ldc.
@@ -677,10 +686,9 @@ _hamster_corpse_07 = (
                          'dxllol.               'clccl,
 
 
-""")
+"""
 
-_hamster_corpse_08 = (
-    """
+_hamster_corpse_08 = """
                    'l'   .:okc.  .,:ldOc
                 .,:od'.,:cldo;,;:cccll;...';c'
      ..       .;cc;ldcc:;,;oocc:,,,lxl;:cldd:.
@@ -714,10 +722,9 @@ ll;cc..;c:oo:;;;;;;;;;;;;;;;;;;;;;;;;;:lcc:..,c::oo:;;:ldo;'
      .::coc;;:cdd.                   .cdolcccdd;..
         :Oxooddo'                     .;cllccc;.
 
-""")
+"""
 
-_hamster_corpse_09 = (
-    """
+_hamster_corpse_09 = """
               .   .'.                                   .',,'''..
               ....;:'                                  .:::::clodl:'.
                .:lc'      ..                     .    .,;,;;:::coddddc'
@@ -744,10 +751,9 @@ _hamster_corpse_09 = (
           ...                ..
           ...
 
-""")
+"""
 
-_hamster_corpse_10 = (
-    """
+_hamster_corpse_10 = """
                      .;ccccc:,
                    ,oocccldxd;.
                   .okollolc;.
@@ -771,14 +777,13 @@ _hamster_corpse_10 = (
               ..     ..';clc:::'. ..  ',.
                         ....           ...
 
-""")
+"""
 # 2018-05-17 17:55: (lb) I generated this a few hours ago and now
 # I cannot recall what the source image was.
 
 # ***
 
-_infection_notice = (
-    """
+_infection_notice = """
 ╔═════════════════════════════════════════════════════════════════════════════════╗
 ║ ╭─────────────────────────────────────────────────────────────────────────────╮ ║
 ║ │                                                                             │ ║
@@ -791,7 +796,7 @@ _infection_notice = (
 ╚═════════════════════════════════════════════════════════════════════════════════╝
 
                             Press SPACE BAR to continue
-""")
+"""
 
 
 # ***
@@ -832,7 +837,7 @@ def justify_line(lines, avail_width):
     middleish = int(0.33 * avail_width)
     rand_left = random.choice(range(avail_width))
     padding_l = random.choice([middleish, rand_left])
-    justified = "\n".join([' ' * padding_l + line for line in lines.splitlines()])
+    justified = "\n".join([" " * padding_l + line for line in lines.splitlines()])
     return justified
 
 
@@ -841,7 +846,7 @@ def curly_quote(obj):
     # FIXME/2018-05-18: (lb): Make config setting for this.
     #    ascii_only = controller.config['term.ascii_only']
     ascii_only = False
-    if ascii_only or (os.name == 'nt'):
+    if ascii_only or (os.name == "nt"):
         return "'{}'".format(obj)
     else:
         # Vim digraph: <Ctrl-l> '6 / <Ctrl-l> '9
@@ -853,9 +858,8 @@ def curly_quotes(obj):
     # FIXME/2018-05-18: (lb): Make config setting for this.
     #    ascii_only = controller.config['term.ascii_only']
     ascii_only = False
-    if ascii_only or (os.name == 'nt'):
+    if ascii_only or (os.name == "nt"):
         return '"{}"'.format(obj)
     else:
         # Vim digraph: <Ctrl-l> "6 / <Ctrl-l> "9
-        return '“{}”'.format(obj)
-
+        return "“{}”".format(obj)

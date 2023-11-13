@@ -27,15 +27,15 @@ import sys
 import ansi_escape_room
 
 __all__ = (
-    'disable_colors',
-    'enable_colors',
-    'coloring',
-    'set_coloring',
-    'fg',
-    'bg',
-    'attr',
-    'stylize',
-    'verify_colors_attrs',
+    "disable_colors",
+    "enable_colors",
+    "coloring",
+    "set_coloring",
+    "fg",
+    "bg",
+    "attr",
+    "stylize",
+    "verify_colors_attrs",
     # Private:
     #  'map_color'  # Unimplemented
     #  '_try_attr',
@@ -85,23 +85,24 @@ def set_coloring(new_coloring):
 
 def fg(color):
     if not coloring():
-        return ''
+        return ""
     return ansi_escape_room.fg(map_color(color))
 
 
 def bg(color):
     if not coloring():
-        return ''
+        return ""
     return ansi_escape_room.bg(map_color(color))
 
 
 def attr(color):
     if not coloring():
-        return ''
+        return ""
     return ansi_escape_room.attr(map_color(color))
 
 
 # ***
+
 
 def stylize(text, *args):
     def _stylize():
@@ -111,10 +112,10 @@ def stylize(text, *args):
         # The first argument may be a foreground color. If not, it's an
         # attribute. The remaining arguments are assumed to be attributes.
         ctrlseq = assemble_styling()
-        return '{}{}{}'.format(ctrlseq, text, ansi_escape_room.attr('reset'))
+        return "{}{}{}".format(ctrlseq, text, ansi_escape_room.attr("reset"))
 
     def assemble_styling():
-        ctrlseq = ''
+        ctrlseq = ""
         for idx, arg in enumerate(args):
             if not ctrlseq:
                 ctrlseq += _try_fg_color(arg)
@@ -139,21 +140,21 @@ def _try_fg_color(color):
     try:
         return ansi_escape_room.fg(color)
     except KeyError:
-        return ''
+        return ""
 
 
 def _try_attr(attr):
     try:
         return ansi_escape_room.attr(attr)
     except KeyError:
-        return ''
+        return ""
 
 
 # ***
+
 
 def map_color(color):
     # FIXME/2018-06-08: (lb): Need a way to easily change palette.
     # Should at least have two profiles, one for black on white; and t'other.
     # Search all uses of fg and bg, and maybe even map attr?
     return color
-

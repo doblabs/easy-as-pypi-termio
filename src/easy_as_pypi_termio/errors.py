@@ -35,15 +35,16 @@ from .paging import click_echo, flush_pager
 from .style import stylize
 
 __all__ = (
-    'echo_exit',
-    'echo_warning',
-    'echoed_warnings_reset',
-    'exit_warning',
-    'exit_warning_crude',
+    "echo_exit",
+    "echo_warning",
+    "echoed_warnings_reset",
+    "exit_warning",
+    "exit_warning_crude",
 )
 
 
 # ***
+
 
 def exit_warning_crude(msg, crude=True):
     # (lb): I made two similar error-and-exit funcs. See also: exit_warning.
@@ -54,11 +55,12 @@ def exit_warning_crude(msg, crude=True):
         # click.pause(info='')
     click_echo()
     # FIXME: (lb): Replace hardcoded styles. Assign from styles.conf. #styling
-    click_echo(stylize(msg, 'yellow_1'))
+    click_echo(stylize(msg, "yellow_1"))
     sys.exit(1)
 
 
 # ***
+
 
 def exit_warning(msg):
     # (lb): I made two similar error-and-exit funcs. See also: exit_warning_crude.
@@ -83,7 +85,7 @@ def echo_warning(msg):
     #  click.echo(stylize(msg, 'red_1'), err=True)  # 196
     # Yellow pops and at least says caution. Works for dark.
     # - FIXME: Add to 'night'.
-    click.echo(stylize(msg, 'yellow_1'), err=True)  # 226
+    click.echo(stylize(msg, "yellow_1"), err=True)  # 226
     this.BEEN_WARNED = True
 
 
@@ -94,6 +96,7 @@ def echoed_warnings_reset():
 
 
 # ***
+
 
 def echo_exit(ctx, message, exitcode=0):
     def _echo_exit(message):
@@ -107,8 +110,7 @@ def echo_exit(ctx, message, exitcode=0):
         @flush_pager
         def __flush_pager():
             pass
+
         __flush_pager()
 
     _echo_exit(message)
-
-

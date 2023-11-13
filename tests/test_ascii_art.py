@@ -48,13 +48,13 @@ from easy_as_pypi_termio.ascii_art import (
 
 if pyfiglet is not None:
 
-    @mock.patch('pyfiglet.Figlet.getFonts', side_effect=Exception)
+    @mock.patch("pyfiglet.Figlet.getFonts", side_effect=Exception)
     def test_append_figlet_text_maybe_fail_if_pyfiglet_fails(figlet_mock):
         artwork = []
         with pytest.raises(Exception):
             append_figlet_text_maybe(artwork)
 
-    @mock.patch.dict('sys.modules', {'pyfiglet': None})  # Raise ImportError.
+    @mock.patch.dict("sys.modules", {"pyfiglet": None})  # Raise ImportError.
     def test_append_figlet_text_maybe_noop_if_pyfiglet_missing():
         artwork = []
         append_figlet_text_maybe(artwork)
@@ -84,7 +84,7 @@ def test_randomster():
 # (lb): Not sure why, but mock.patch does not work how I'd expect:
 #         @mock.patch('shutil.get_terminal_size', return_value=(0,))
 #       but a patch.object does.
-@mock.patch.object(shutil, 'get_terminal_size', return_value=mock.Mock(columns=0))
+@mock.patch.object(shutil, "get_terminal_size", return_value=mock.Mock(columns=0))
 def test_avail_width_none(get_terminal_size):
     art = randomster()
     assert art
@@ -99,24 +99,24 @@ def test_lifeless():
 
 # Somewhat misplaced functions...
 
+
 def test_curly_quote_okay():
-    quoted = curly_quote('foo')
-    assert quoted == '‘foo’'
+    quoted = curly_quote("foo")
+    assert quoted == "‘foo’"
 
 
-@mock.patch('os.name', new_callable=mock.PropertyMock(return_value='nt'))
+@mock.patch("os.name", new_callable=mock.PropertyMock(return_value="nt"))
 def test_curly_quote_fail(os_name):
-    quoted = curly_quote('foo')
+    quoted = curly_quote("foo")
     assert quoted == "'foo'"
 
 
 def test_curly_quotes_okay():
-    quoted = curly_quotes('foo')
-    assert quoted == '“foo”'
+    quoted = curly_quotes("foo")
+    assert quoted == "“foo”"
 
 
-@mock.patch('os.name', new_callable=mock.PropertyMock(return_value='nt'))
+@mock.patch("os.name", new_callable=mock.PropertyMock(return_value="nt"))
 def test_curly_quotes_fail(os_name):
-    quoted = curly_quotes('foo')
+    quoted = curly_quotes("foo")
     assert quoted == '"foo"'
-

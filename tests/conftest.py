@@ -34,4 +34,3 @@ def enable_coloring():
     set_coloring(True)
     yield
     set_coloring(False)
-

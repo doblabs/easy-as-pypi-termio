@@ -31,7 +31,7 @@ import pytest
 
 from easy_as_pypi_termio.ascii_table import generate_table
 
-TableKeysValues = namedtuple('TableKeysValues', ('keys', 'values'))
+TableKeysValues = namedtuple("TableKeysValues", ("keys", "values"))
 
 
 def test_generate_table_basic(basic_table, capsys):
@@ -44,16 +44,18 @@ def test_generate_table_basic(basic_table, capsys):
 
 # ***
 
+
 def test_generate_table_cols_align(basic_table, capsys):
     rows, headers = basic_table
     output_obj = sys.stdout
-    cols_align = ['l', 'r', 'l'] + ['l'] * (len(headers) - 3)
+    cols_align = ["l", "r", "l"] + ["l"] * (len(headers) - 3)
     generate_table(rows, headers, output_obj, cols_align=cols_align)
     out, err = capsys.readouterr()
     assert out and not err
 
 
 # ***
+
 
 def test_generate_table_max_width_1(basic_table, capsys):
     rows, headers = basic_table
@@ -66,13 +68,14 @@ def test_generate_table_max_width_1(basic_table, capsys):
 
 # ***
 
+
 def test_generate_table_tabulate_okay(basic_table, capsys):
     rows, headers = basic_table
     output_obj = sys.stdout
     # Any string other than 'texttable' or falsey will take 'tabulate' branch,
     # because 'tabulate' supports a bunch of options.
     #  table_type = 'tabulate'  # default tabulate table type
-    table_type = 'fancy_grid'  # specific tabulate table type
+    table_type = "fancy_grid"  # specific tabulate table type
     generate_table(rows, headers, output_obj, table_type=table_type)
     out, err = capsys.readouterr()
     assert out and not err
@@ -81,12 +84,13 @@ def test_generate_table_tabulate_okay(basic_table, capsys):
 def test_generate_table_tabulate_fail_table_type(basic_table, capsys):
     rows, headers = basic_table
     output_obj = sys.stdout
-    table_type = 'foo'  # unrecognized tabulate table type
+    table_type = "foo"  # unrecognized tabulate table type
     with pytest.raises(ValueError):
         generate_table(rows, headers, output_obj, table_type=table_type)
 
 
 # ***
+
 
 def test_generate_table_named_tuple_fail_textable(basic_table, capsys):
     rows, headers = basic_table
@@ -95,7 +99,7 @@ def test_generate_table_named_tuple_fail_textable(basic_table, capsys):
     with pytest.raises(AttributeError):
         # This fails because generate_table treats rows as list,
         # and calls rows.insert.
-        generate_table(rows=tkv, headers='rows', output_obj=output_obj)
+        generate_table(rows=tkv, headers="rows", output_obj=output_obj)
 
 
 def test_generate_table_named_tuple_fail_tabulate(basic_table, capsys):
@@ -104,13 +108,14 @@ def test_generate_table_named_tuple_fail_tabulate(basic_table, capsys):
     with pytest.raises(ValueError):
         generate_table(
             rows=tkv,
-            headers='rows',
-            table_type='tabulate',
+            headers="rows",
+            table_type="tabulate",
             output_obj=sys.stdout,
         )
 
 
 # ***
+
 
 @pytest.fixture
 def basic_table():
@@ -119,7 +124,7 @@ def basic_table():
 
     headers = []
     for ncol in range(ncols):
-        header = fauxfactory.gen_string('alphanumeric')
+        header = fauxfactory.gen_string("alphanumeric")
         headers.append(header)
 
     rows = []
@@ -131,9 +136,8 @@ def basic_table():
             elif ncol == 1:
                 cell = fauxfactory.gen_integer()
             else:
-                cell = fauxfactory.gen_string('utf8')
+                cell = fauxfactory.gen_string("utf8")
             row.append(cell)
         rows.append(row)
 
     return rows, headers
-

@@ -52,25 +52,24 @@ from .errors import exit_warning
 # Profiling: load times:
 #  ~ 0.004 secs.  / from tabulate import tabulate
 #  ~ 0.015 secs.  / from texttable import Texttable
-tabulate = lazy_import.lazy_module('tabulate')
-texttable = lazy_import.lazy_module('texttable')
+tabulate = lazy_import.lazy_module("tabulate")
+texttable = lazy_import.lazy_module("texttable")
 
-__all__ = (
-    'generate_table',
-)
+__all__ = ("generate_table",)
 
 
 def generate_table(
     rows,
     headers,
     output_obj,
-    table_type='texttable',
+    table_type="texttable",
     max_width=0,
     cols_align=None,
 ):
     """Generates and prints a table in the format specified."""
+
     def _generate_table():
-        if table_type == 'texttable' or not table_type:
+        if table_type == "texttable" or not table_type:
             # Default is 'texttable', which will balance and wrap long cell values.
             generate_table_texttable(rows, headers)
         else:
@@ -105,20 +104,20 @@ def generate_table(
         # Render the table.
         textable = generate_table_texttable_draw(ttable)
         output_obj.write(textable)
-        output_obj.write('\n')
+        output_obj.write("\n")
 
     def set_cols_align(ttable):
         if cols_align is None:
             set_cols_align_right_then_lefts(ttable)
         else:
-            cols_align[0] = 'r'
+            cols_align[0] = "r"
             ttable.set_cols_align(cols_align)
 
     def set_cols_align_right_then_lefts(ttable):
         # Right-align the first column; left-align the rest.
-        cols_align = ['r']
+        cols_align = ["r"]
         for idx in range(1, len(headers)):
-            cols_align.append('l')
+            cols_align.append("l")
         ttable.set_cols_align(cols_align)
 
     def generate_table_texttable_draw(ttable):
@@ -127,7 +126,7 @@ def generate_table(
         except ValueError as err:
             msg = str(err)
             if msg == "max_width too low to render data":
-                msg = _('Please specify a larger table width.')
+                msg = _("Please specify a larger table width.")
             exit_warning(msg)
 
     # ***
@@ -135,7 +134,7 @@ def generate_table(
     def generate_table_tabulate(rows, headers, table_type):
         tabulation = generate_table_tabulate_tabulate(rows, headers, table_type)
         output_obj.write(tabulation)
-        output_obj.write('\n')
+        output_obj.write("\n")
 
     def generate_table_tabulate_tabulate(rows, headers, table_type):
         # tabulate falls back on 'simple' table format if no match.
@@ -143,30 +142,32 @@ def generate_table(
         if not validate_tabulate_table_type(table_type):
             # The CLI front end should preclude this path, but still.
             raise ValueError(
-                '{}: {} table_type: ‘{}’'.format(
-                    _('ERROR'), _('Unknown'), table_type,
-                ))
+                "{}: {} table_type: ‘{}’".format(
+                    _("ERROR"),
+                    _("Unknown"),
+                    table_type,
+                )
+            )
 
         try:
             # From a peek inside tabulate, it only throws ValueError.
             return tabulate.tabulate(
-                rows, headers=headers, tablefmt=table_type,
+                rows,
+                headers=headers,
+                tablefmt=table_type,
             )
         except Exception as err:
             raise ValueError(
-                '{}: {} tabulate table_type ‘{}’: {}'.format(
-                    _('ERROR'),
-                    _('Unexpected failure rendering'),
+                "{}: {} tabulate table_type ‘{}’: {}".format(
+                    _("ERROR"),
+                    _("Unexpected failure rendering"),
                     table_type,
                     str(err),
                 )
             )
 
     def validate_tabulate_table_type(table_type):
-        if (
-            table_type == 'tabulate'
-            or table_type in tabulate.tabulate_formats
-        ):
+        if table_type == "tabulate" or table_type in tabulate.tabulate_formats:
             return True
 
         return False
@@ -174,4 +175,3 @@ def generate_table(
     # ***
 
     _generate_table()
-

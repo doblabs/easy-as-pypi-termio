@@ -37,7 +37,6 @@ from easy_as_pypi_termio.style import (
 
 
 class TestStyle:
-
     # ***
 
     def test_style_enable_colors(self):
@@ -55,35 +54,35 @@ class TestStyle:
 
     # ***
 
-    BLUE_NO = ''
-    BLUE_FG = '\x1b[38;5;4m'
-    BLUE_BG = '\x1b[48;5;4m'
+    BLUE_NO = ""
+    BLUE_FG = "\x1b[38;5;4m"
+    BLUE_BG = "\x1b[48;5;4m"
 
-    BOLD_NO = ''
-    BOLD_ON = '\x1b[1m'
+    BOLD_NO = ""
+    BOLD_ON = "\x1b[1m"
 
     def test_fg_coloring_off(self):
-        text = fg(color='blue')
+        text = fg(color="blue")
         assert text == self.BLUE_NO
 
     def test_fg_coloring_on(self, enable_coloring):
-        text = fg(color='blue')
+        text = fg(color="blue")
         assert text == self.BLUE_FG
 
     def test_bg_coloring_off(self):
-        text = bg(color='blue')
+        text = bg(color="blue")
         assert text == self.BLUE_NO
 
     def test_bg_coloring_on(self, enable_coloring):
-        text = bg(color='blue')
+        text = bg(color="blue")
         assert text == self.BLUE_BG
 
     def test_attr_coloring_off(self):
-        text = attr(color='bold')
+        text = attr(color="bold")
         assert text == self.BOLD_NO
 
     def test_attr_coloring_on(self, enable_coloring):
-        text = attr(color='bold')
+        text = attr(color="bold")
         assert text == self.BOLD_ON
 
     # ***
@@ -93,15 +92,15 @@ class TestStyle:
         assert stylize(foo) is foo
 
     def test_stylize_on(self, enable_coloring):
-        text = stylize('This is loud ’n green', 'bold', 'green')
-        assert text == '\x1b[1mThis is loud ’n green\x1b[0m'
+        text = stylize("This is loud ’n green", "bold", "green")
+        assert text == "\x1b[1mThis is loud ’n green\x1b[0m"
 
     # ***
 
     def test_verify_colors_attrs(self):
-        attrs = ['bold', 'bolder', 'blue', 'bluer']
+        attrs = ["bold", "bolder", "blue", "bluer"]
         errs = verify_colors_attrs(*attrs)
-        assert errs == ['bolder', 'bluer']
+        assert errs == ["bolder", "bluer"]
 
     # ***
 
@@ -110,5 +109,5 @@ class TestStyle:
         foo = object()
         assert map_color(foo) is foo
 
-# ***
 
+# ***

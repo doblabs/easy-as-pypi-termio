@@ -36,27 +36,15 @@
 #
 #     noqa: F401: Disable: 'foo.bar' imported but unused.
 
-from .echoes import (  # noqa: F401
-    echo_block_header,
-    highlight_value
-)
+from .echoes import echo_block_header, highlight_value  # noqa: F401
 from .errors import (  # noqa: F401
     echo_exit,
     echo_warning,
     exit_warning,
-    exit_warning_crude
+    exit_warning_crude,
 )
-from .paging import (  # noqa: F401
-    ClickEchoPager,
-    click_echo
-)
-from .style import (  # noqa: F401
-    attr,
-    bg,
-    coloring,
-    stylize,
-    fg
-)
+from .paging import ClickEchoPager, click_echo  # noqa: F401
+from .style import attr, bg, coloring, stylize, fg  # noqa: F401
 
 # This version is substituted on poetry-build by poetry-dynamic-versioning.
 # - Consequently, __version__ remains empty when installed in 'editable' mode.
