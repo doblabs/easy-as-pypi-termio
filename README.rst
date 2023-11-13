@@ -2,33 +2,48 @@
 easy-as-pypi-termio
 @@@@@@@@@@@@@@@@@@@
 
-.. .. image:: https://travis-ci.com/landonb/easy-as-pypi.svg?branch=develop
-..   :target: https://travis-ci.com/landonb/easy-as-pypi
-..   :alt: Build Status
-..
-.. .. image:: https://codecov.io/gh/landonb/easy-as-pypi/branch/develop/graph/badge.svg
-..   :target: https://codecov.io/gh/landonb/easy-as-pypi
-..   :alt: Coverage Status
-..
-.. .. image:: https://readthedocs.org/projects/easy-as-pypi/badge/?version=latest
-..   :target: https://easy-as-pypi.readthedocs.io/en/latest/
-..   :alt: Documentation Status
-..
-.. .. image:: https://img.shields.io/github/release/landonb/easy-as-pypi.svg?style=flat
-..   :target: https://github.com/landonb/easy-as-pypi/releases
-..   :alt: GitHub Release Status
-..
-.. .. image:: https://img.shields.io/pypi/v/easy-as-pypi.svg
-..   :target: https://pypi.org/project/easy-as-pypi/
-..   :alt: PyPI Release Status
+.. CXREF:
+   https://docs.github.com/en/actions/monitoring-and-troubleshooting-workflows/adding-a-workflow-status-badge
 
-.. image:: https://img.shields.io/github/license/landonb/easy-as-pypi.svg?style=flat
-  :target: https://github.com/landonb/easy-as-pypi/blob/release/LICENSE
+.. image:: https://github.com/doblabs/easy-as-pypi-termio/actions/workflows/checks-unspecial.yml/badge.svg?branch=release
+  :target: https://github.com/doblabs/easy-as-pypi-termio/actions/workflows/checks-unspecial.yml/badge.svg?branch=release
+  :alt: Build Status
+
+.. CXREF: https://app.codecov.io/gh/doblabs/easy-as-pypi-termio/settings/badge
+
+.. image:: https://codecov.io/gh/doblabs/easy-as-pypi-termio/graph/badge.svg?token=tRlO7x8BVn
+  :target: https://app.codecov.io/gh/doblabs/easy-as-pypi-termio
+  :alt: Coverage Status
+
+.. image:: https://readthedocs.org/projects/easy-as-pypi-termio/badge/?version=latest
+  :target: https://easy-as-pypi-termio.readthedocs.io/en/latest/
+  :alt: Documentation Status
+
+.. image:: https://img.shields.io/github/v/release/doblabs/easy-as-pypi-termio.svg?style=flat
+  :target: https://github.com/doblabs/easy-as-pypi-termio/releases
+  :alt: GitHub Release Status
+
+.. image:: https://img.shields.io/pypi/v/easy-as-pypi-termio.svg
+  :target: https://pypi.org/project/easy-as-pypi-termio/
+  :alt: PyPI Release Status
+
+.. image:: https://img.shields.io/pypi/pyversions/easy-as-pypi-termio.svg
+  :target: https://pypi.org/project/easy-as-pypi-termio/
+  :alt: PyPI Supported Python Versions
+
+.. image:: https://img.shields.io/github/license/doblabs/easy-as-pypi-termio.svg?style=flat
+  :target: https://github.com/doblabs/easy-as-pypi-termio/blob/release/LICENSE
   :alt: License Status
+
+.. |easy-as-pypi-termio| replace:: ``easy-as-pypi-termio``
+.. _easy-as-pypi-termio: https://github.com/doblabs/easy-as-pypi-termio
+
+.. |pip| replace:: ``pip``
+.. _pip: https://pip.pypa.io/en/stable/
 
 Click CLI conveniences for your next Python CLI based on easy-as-pypi.
 
 .. Install with ``pip``::
 ..
-..     pip3 install easy-as-pypi-termio
+..     pip install easy-as-pypi-termio
 
