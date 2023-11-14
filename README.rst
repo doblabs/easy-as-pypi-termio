@@ -38,12 +38,14 @@ easy-as-pypi-termio
 .. |easy-as-pypi-termio| replace:: ``easy-as-pypi-termio``
 .. _easy-as-pypi-termio: https://github.com/doblabs/easy-as-pypi-termio
 
-.. |pip| replace:: ``pip``
-.. _pip: https://pip.pypa.io/en/stable/
+.. |pipx| replace:: ``pipx``
+.. _pipx: https://pypa.github.io/pipx/
+
+|
 
 Click CLI conveniences for your next Python CLI based on easy-as-pypi.
 
-.. Install with ``pip``::
+.. Install with |pipx|_::
 ..
-..     pip install easy-as-pypi-termio
+..     pipx install easy-as-pypi-termio
 
