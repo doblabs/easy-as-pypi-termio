@@ -105,8 +105,9 @@ doblabs/easy-as-pypi-termio:
   # # - doblabs/dob-viewer
   # # - doblabs/dob
   # Cascade to apps:
-  - doblabs/nark
-  - befinance/birdseye
+  # ISOFF/2023-12-03 00:57: For testing
+  #  - doblabs/nark
+  #  - befinance/birdseye
 
 # ***
 
