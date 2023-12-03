@@ -144,30 +144,31 @@ download = "https://pypi.org/project/easy-as-pypi-termio/#files"
 
 # **** For Click
 
-# Enable Click color support (we don't use colorama directly, but Click
-# does when it's available: "on Windows, this ... is only available if
-# colorama is installed").
+# - For Click color support
+#
+#   - This project doesn't use colorama directly, but Click use it
+#     when it's available (or at least, "on Windows, this ... is
+#     only available if colorama is installed").
 #
 #   https://pypi.org/project/colorama
 #   https://click.palletsprojects.com/en/5.x/utils/#ansi-colors
-# colorama = ">= 0.4.3, < 1"
 colorama = "^0.4.6"
 
 # **** For easy_as_pypi_termio/ascii_table.py
 
-# Load modules "in a lazy fashion".
+# - Load modules "in a lazy fashion"
 #
 #   https://pypi.org/project/lazy_import
 #   https://github.com/mnmelo/lazy_import
 lazy_import = "^0.2.2"
 
-# Tabulate is one of the many table formatter choices.
+# - Tabulate is one of the many table formatter choices
 #
 #   https://pypi.org/project/tabulate
 #   https://bitbucket.org/astanin/python-tabulate
 tabulate = "^0.9.0"
 
-# Texttable is one of the many table formatter choices.
+# - Texttable is one of the many table formatter choices
 #
 #   https://pypi.org/project/texttable
 #   https://github.com/bufordtaylor/python-texttable
@@ -175,23 +176,31 @@ texttable = "^1.6.7"
 
 # **** Org. deps (pkgs we manage).
 
-# "Very simple Python library for color and formatting in terminal."
-# Forked (for italic "support") to:
-#   https://github.com/hotoffthehamster/ansi-escape-room
-# Forked from:
-#   https://gitlab.com/dslackw/colored
-# See wrapper file:
-#   easy_as_pypi_termio/termio/style.py
+# - Colored fork with italic support and performance improvements
+# 
+#   - CXREF: See wrapper file:
+#     ~/.kit/py/easy-as-pypi-termio/src/easy_as_pypi_termio/style.py
 #
 #   https://pypi.org/project/ansi-escape-room
+#   https://github.com/hotoffthehamster/ansi-escape-room
+#
+#   - "Very simple Python library for color and formatting in terminal"
+#
+#     https://pypi.org/project/colored
+#     https://gitlab.com/dslackw/colored
+#
 ansi-escape-room = "^1.5.0"
 
-# (lb): Click once for Yes! Click twice for Yes! Yes!
-#   https://github.com/pallets/click
-#     'click >= 7.0, < 8',
-# But instead a Click fork with subtle tweaks.
-#   https://github.com/hotoffthehamster/click
+# - Click fork with subtle tweaks:
 #
 #   https://pypi.org/project/click-hotoffthehamster
+#   https://github.com/hotoffthehamster/click
+#
+#   - Click canon:
+#
+#     https://pypi.org/project/click
+#     https://github.com/pallets/click
+#
+# SAVVY: click-hoth v7.8 is pallets's click v8.x fork.
 click-hotoffthehamster = "^7.8.0"
 {% endblock %}
