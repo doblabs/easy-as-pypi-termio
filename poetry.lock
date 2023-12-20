@@ -27,13 +27,13 @@ typing-extensions = {version = ">=4.0.0", markers = "python_version < \"3.9\""}
 
 [[package]]
 name = "ansi-escape-room"
-version = "1.5.0"
+version = "1.5.2"
 description = "Simple library for color and formatting to terminal"
 optional = false
 python-versions = ">=3.8.1,<4.0.0"
 files = [
-    {file = "ansi_escape_room-1.5.0-py3-none-any.whl", hash = "sha256:a687202c19b5c5712be71ec29201c90ee7fe0a3546815f51992923fc185b7970"},
-    {file = "ansi_escape_room-1.5.0.tar.gz", hash = "sha256:23f1113817fe9e002262a2b2f587a7230bba770a1b121e06862cfe66a90a306e"},
+    {file = "ansi_escape_room-1.5.2-py3-none-any.whl", hash = "sha256:20658dc2c0411161971c69b65492874003f518ff53eb42ceca58f493f186071d"},
+    {file = "ansi_escape_room-1.5.2.tar.gz", hash = "sha256:9bc0050e083d3ee3dba5f767a1448c8f7ba9d4fc23920480a0329ff5e42a6c16"},
 ]
 
 [package.extras]
