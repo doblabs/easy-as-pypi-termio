@@ -27,17 +27,22 @@ typing-extensions = {version = ">=4.0.0", markers = "python_version < \"3.9\""}
 
 [[package]]
 name = "ansi-escape-room"
-version = "1.5.2"
+version = "1.5.2a1"
 description = "Simple library for color and formatting to terminal"
 optional = false
 python-versions = ">=3.8.1,<4.0.0"
 files = [
-    {file = "ansi_escape_room-1.5.2-py3-none-any.whl", hash = "sha256:20658dc2c0411161971c69b65492874003f518ff53eb42ceca58f493f186071d"},
-    {file = "ansi_escape_room-1.5.2.tar.gz", hash = "sha256:9bc0050e083d3ee3dba5f767a1448c8f7ba9d4fc23920480a0329ff5e42a6c16"},
+    {file = "ansi_escape_room-1.5.2a1-py3-none-any.whl", hash = "sha256:599c7f4dd9fccf6eb036ea72b1186c7eb5835d4ab02b77f9237820edea8fca93"},
+    {file = "ansi_escape_room-1.5.2a1.tar.gz", hash = "sha256:c380061ef42a403f08f937c5144daa60d7b37ccf3b5dba9c728320f2af9c6f99"},
 ]
 
 [package.extras]
 readthedocs = ["sphinx (>=6.2.1,<7.0.0)", "sphinx (>=7.2.6,<8.0.0)", "sphinx-rtd-theme (>=2.0.0rc4,<3.0.0)", "tomli (>=2.0.1)"]
+
+[package.source]
+type = "legacy"
+url = "https://test.pypi.org/simple"
+reference = "testpypi"
 
 [[package]]
 name = "argcomplete"
@@ -365,13 +370,13 @@ colorama = {version = "*", markers = "platform_system == \"Windows\""}
 
 [[package]]
 name = "click-hotoffthehamster"
-version = "7.8.2"
+version = "7.8.3a2"
 description = "Composable command line interface toolkit"
 optional = false
 python-versions = ">=3.8.1,<4.0.0"
 files = [
-    {file = "click_hotoffthehamster-7.8.2-py3-none-any.whl", hash = "sha256:4020ed5d9b0c0067ad69e867ac4deac4890af5b41dab34115e9f6ed8103676ec"},
-    {file = "click_hotoffthehamster-7.8.2.tar.gz", hash = "sha256:4d6c289fcdf4e8456d181f4e0a86f76a5e3c76c2390330f23459507335c87336"},
+    {file = "click_hotoffthehamster-7.8.3a2-py3-none-any.whl", hash = "sha256:71846801baf6c545fa18b176c7be877522587d8d9ecfdb4ea549db84cfed8603"},
+    {file = "click_hotoffthehamster-7.8.3a2.tar.gz", hash = "sha256:de98a6e7cea1b15f1334b43859d753988abc967d83b68d98910ade76f39e7ea6"},
 ]
 
 [package.dependencies]
@@ -379,6 +384,11 @@ colorama = {version = ">=0.4.6,<0.5.0", markers = "sys_platform == \"win32\""}
 
 [package.extras]
 readthedocs = ["sphinx (>=6.2.1,<7.0.0)", "sphinx (>=7.2.6,<8.0.0)", "sphinx-rtd-theme (>=2.0.0rc4,<3.0.0)", "tomli (>=2.0.1)"]
+
+[package.source]
+type = "legacy"
+url = "https://test.pypi.org/simple"
+reference = "testpypi"
 
 [[package]]
 name = "codecov"
@@ -2482,4 +2492,4 @@ readthedocs = ["sphinx", "sphinx", "sphinx-rtd-theme", "tomli"]
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.8.1"
-content-hash = "01101798acad336bc2e573eb7605c401c9c1dd61d1547715328be353c98961ea"
+content-hash = "31c7a70d9dd1fa24c05a33f0a95c8ed006201f711a968a87c204a1ffb198ac9d"
