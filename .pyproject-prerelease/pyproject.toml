@@ -1068,7 +1068,7 @@ texttable = "^1.6.7"
 #     https://pypi.org/project/colored
 #     https://gitlab.com/dslackw/colored
 #
-ansi-escape-room = { version = "^1.5.0", source = "testpypi" }
+ansi-escape-room = { version = "^1.5.0", source = "testpypi", allow-prereleases = true }
 
 # - Click fork with subtle tweaks:
 #
@@ -1081,5 +1081,5 @@ ansi-escape-room = { version = "^1.5.0", source = "testpypi" }
 #     https://github.com/pallets/click
 #
 # SAVVY: click-hoth v7.8 is pallets's click v8.x fork.
-click-hotoffthehamster = { version = "^7.8.0", source = "testpypi" }
+click-hotoffthehamster = { version = "^7.8.0", source = "testpypi", allow-prereleases = true }
 
