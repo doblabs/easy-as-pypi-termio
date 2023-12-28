@@ -27,13 +27,13 @@ typing-extensions = {version = ">=4.0.0", markers = "python_version < \"3.9\""}
 
 [[package]]
 name = "ansi-escape-room"
-version = "1.5.2a1"
+version = "1.5.3a1"
 description = "Simple library for color and formatting to terminal"
 optional = false
 python-versions = ">=3.8.1,<4.0.0"
 files = [
-    {file = "ansi_escape_room-1.5.2a1-py3-none-any.whl", hash = "sha256:599c7f4dd9fccf6eb036ea72b1186c7eb5835d4ab02b77f9237820edea8fca93"},
-    {file = "ansi_escape_room-1.5.2a1.tar.gz", hash = "sha256:c380061ef42a403f08f937c5144daa60d7b37ccf3b5dba9c728320f2af9c6f99"},
+    {file = "ansi_escape_room-1.5.3a1-py3-none-any.whl", hash = "sha256:4e444ae2027849f5ac7f3d306a88291cc69e67d7b753f0772159032faa794ade"},
+    {file = "ansi_escape_room-1.5.3a1.tar.gz", hash = "sha256:605b5c928209a26d577cc85c1fb8e61e67912827796f9f1b342bedcb2de6986a"},
 ]
 
 [package.extras]
@@ -370,13 +370,13 @@ colorama = {version = "*", markers = "platform_system == \"Windows\""}
 
 [[package]]
 name = "click-hotoffthehamster"
-version = "7.8.3a2"
+version = "7.8.4a1"
 description = "Composable command line interface toolkit"
 optional = false
 python-versions = ">=3.8.1,<4.0.0"
 files = [
-    {file = "click_hotoffthehamster-7.8.3a2-py3-none-any.whl", hash = "sha256:71846801baf6c545fa18b176c7be877522587d8d9ecfdb4ea549db84cfed8603"},
-    {file = "click_hotoffthehamster-7.8.3a2.tar.gz", hash = "sha256:de98a6e7cea1b15f1334b43859d753988abc967d83b68d98910ade76f39e7ea6"},
+    {file = "click_hotoffthehamster-7.8.4a1-py3-none-any.whl", hash = "sha256:9161a32d8bfc43255662261a84057286d818e51cfac4c541593e2d0e4899afa7"},
+    {file = "click_hotoffthehamster-7.8.4a1.tar.gz", hash = "sha256:07db01e894aae3603c62ea098e51778120619525f42562c7e55441ac6235ff4a"},
 ]
 
 [package.dependencies]
